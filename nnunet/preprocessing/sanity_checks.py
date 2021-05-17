@@ -108,9 +108,14 @@ def verify_dataset_integrity(folder):
     expected_train_identifiers = [i['image'].split("/")[-1][:-7] for i in training_cases]
     expected_test_identifiers = [i.split("/")[-1][:-7] for i in test_cases]
 
+    ## Validations
+    print("++ num_modalities:", num_modalities)
+
+
     ## check training set
     nii_files_in_imagesTr = subfiles((join(folder, "imagesTr")), suffix=".nii.gz", join=False)
     nii_files_in_labelsTr = subfiles((join(folder, "labelsTr")), suffix=".nii.gz", join=False)
+
 
     label_files = []
     geometries_OK = True
@@ -121,16 +126,23 @@ def verify_dataset_integrity(folder):
 
     print("Verifying training set")
     for c in expected_train_identifiers:
+
         print("checking case", c)
         # check if all files are present
         expected_label_file = join(folder, "labelsTr", c + ".nii.gz")
         label_files.append(expected_label_file)
         expected_image_files = [join(folder, "imagesTr", c + "_%04.0d.nii.gz" % i) for i in range(num_modalities)]
+        ## JAGH
+        # expected_image_files = [join(folder, "imagesTr", c + ".nii.gz")]
+        # print("++ expected_image_files", expected_image_files)
+        ## END
+
         assert isfile(expected_label_file), "could not find label file for case %s. Expected file: \n%s" % (
             c, expected_label_file)
         assert all([isfile(i) for i in
                     expected_image_files]), "some image files are missing for case %s. Expected files:\n %s" % (
             c, expected_image_files)
+
 
         # verify that all modalities and the label have the same shape and geometry.
         label_itk = sitk.ReadImage(expected_label_file)
@@ -200,6 +212,10 @@ def verify_dataset_integrity(folder):
         for c in expected_test_identifiers:
             # check if all files are present
             expected_image_files = [join(folder, "imagesTs", c + "_%04.0d.nii.gz" % i) for i in range(num_modalities)]
+
+            ## JAGH
+            # expected_image_files = [join(folder, "imagesTs", c + ".nii.gz")]
+            ## END
             assert all([isfile(i) for i in
                         expected_image_files]), "some image files are missing for case %s. Expected files:\n %s" % (
                 c, expected_image_files)

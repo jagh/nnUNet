@@ -179,6 +179,7 @@ class ImageCropper(object):
         return [i.split("/")[-1][:-4] for i in self.get_list_of_cropped_files()]
 
     def run_cropping(self, list_of_files, overwrite_existing=False, output_folder=None):
+    # def run_cropping(self, list_of_files, overwrite_existing=True, output_folder=None):
         """
         also copied ground truth nifti segmentation into the preprocessed folder so that we can use them for evaluation
         on the cluster
@@ -199,8 +200,10 @@ class ImageCropper(object):
         list_of_args = []
         for j, case in enumerate(list_of_files):
             case_identifier = get_case_identifier(case)
+            # print("++ overwrite_existing", overwrite_existing)
             list_of_args.append((case, case_identifier, overwrite_existing))
 
+        # print("++ list_of_args", list_of_args)
         p = Pool(self.num_threads)
         p.starmap(self.load_crop_save, list_of_args)
         p.close()
