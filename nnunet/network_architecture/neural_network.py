@@ -12,6 +12,8 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
+import os
+os.environ['CUDA_VISIBLE_DEVICES']='4'
 
 import numpy as np
 from batchgenerators.augmentations.utils import pad_nd_image
