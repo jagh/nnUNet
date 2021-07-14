@@ -109,6 +109,11 @@ def get_tp_fp_fn_tn(net_output, gt, axes=None, mask=None, square=False):
     :param square: if True then fp, tp and fn will be squared before summation
     :return:
     """
+
+    print("****"*30)
+    print("+ Dice_loss.py")
+    print("++ net_output: ", net_output.size())
+
     if axes is None:
         axes = tuple(range(2, len(net_output.size())))
 
