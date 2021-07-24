@@ -112,7 +112,9 @@ def get_tp_fp_fn_tn(net_output, gt, axes=None, mask=None, square=False):
 
     print("****"*30)
     print("+ Dice_loss.py")
-    print("++ net_output: ", net_output.size())
+    print("++ net_output: ", len(net_output.size()))
+    print("++ GT: ", type(gt))
+    print("++ GT: ", gt.shape)
 
     if axes is None:
         axes = tuple(range(2, len(net_output.size())))

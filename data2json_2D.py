@@ -36,11 +36,11 @@ output_file             = os.path.join(dataset_folder, "dataset.json")
 imagesTr_dir            = os.path.join(dataset_folder, "imagesTr")
 imagesTs_dir            = os.path.join(dataset_folder, "imagesTs")
 modalities              = ["CT"]
-labels                  = {0: 'foreground', 1: 'GGO', 2: 'CON'}
+labels                  = {0: 'foreground', 1: 'GGO', 2: 'CON', 3: 'ATE', 4: 'PLE'}
 dataset_name            = "Task115_COVID-19",
 license                 = "Hands on",
-dataset_description     = "Lesion segmentation for covid+",
-dataset_reference       = "COVID-19-20 - Grand Challenge & MICCAI",
+dataset_description     = "2D-Multiclass Lesion segmentation for covid-19",
+dataset_reference       = "Multiomics 2D slices",
 dataset_release         = '0.0'
 
 utils.generate_dataset_json(output_file, imagesTr_dir, imagesTs_dir, modalities, labels,
