@@ -36,8 +36,14 @@ class MultipleOutputLoss2(nn.Module):
         else:
             weights = self.weight_factors
 
+        print("****"*30)
+        print("++ deep_supervision.py")
+        print("x[0]: ", x[0])
+        print("y[0]:", y[0])
         l = weights[0] * self.loss(x[0], y[0])
         for i in range(1, len(x)):
             if weights[i] != 0:
                 l += weights[i] * self.loss(x[i], y[i])
+
+            print("++ Outside: ", self.loss(x[i], y[i]))
         return l
