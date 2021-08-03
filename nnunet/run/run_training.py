@@ -13,11 +13,11 @@
 #    limitations under the License.
 
 
-#import os
-#os.environ['CUDA_VISIBLE_DEVICES']='4'
+import os
+os.environ['CUDA_VISIBLE_DEVICES']='3'
 
-#import torch
-#torch.cuda.set_device(0)
+import torch
+torch.cuda.set_device(0)
 
 import argparse
 from batchgenerators.utilities.file_and_folder_operations import *
