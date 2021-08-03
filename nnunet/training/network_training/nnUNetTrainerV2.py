@@ -235,10 +235,10 @@ class nnUNetTrainerV2(nnUNetTrainer):
         data_dict = next(data_generator)
         data = data_dict['data']
         target = data_dict['target']
-        print("****"*30)
-        print("++ data_dict: ", data_dict)
-        print("++ data: ", data)
-        print("++ target: ", target)
+        #print("****"*30)
+        #print("++ data_dict: ", data_dict)
+        #print("++ data: ", data)
+        #print("++ target: ", target)
 
         data = maybe_to_torch(data)
         target = maybe_to_torch(target)
