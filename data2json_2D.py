@@ -36,7 +36,8 @@ output_file             = os.path.join(dataset_folder, "dataset.json")
 imagesTr_dir            = os.path.join(dataset_folder, "imagesTr")
 imagesTs_dir            = os.path.join(dataset_folder, "imagesTs")
 modalities              = ["CT"]
-labels                  = {0: 'foreground', 1: 'GGO', 2: 'CON', 3: 'ATE', 4: 'PLE'}
+labels                  = {0: 'foreground', 1: 'GGO', 2: 'CON', 3: 'ATE',
+                                            4: 'PLE', 5: 'BAN', 6: 'TBR'}
 dataset_name            = "Task115_COVID-19",
 license                 = "Hands on",
 dataset_description     = "2D-Multiclass Lesion segmentation for covid-19",
