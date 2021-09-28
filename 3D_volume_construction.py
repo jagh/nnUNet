@@ -41,6 +41,7 @@ lesion_folder = "/data/01_UB/2021-MedNeurIPS/train_Nifti-Seg-6-Classes/"
 metadata_file_path = "/data/01_UB/2021-MedNeurIPS/111_dataframe_axial_slices.csv"
 
 axial_lesion_folder = "/data/01_UB/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_COVIDSegChallenge/AAxial-labelsTr/"
+# axial_lesion_folder = "/data/01_UB/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_COVIDSegChallenge/AAxial-labelsTs/"
 
 
 #####################################################################
@@ -70,19 +71,10 @@ labelsTr_shape_path = os.path.join(dataset_folder, "3D-labelsTr")
 
 
 ## Loop through dataset
-# for filepath in imagesTr_path_glob[:2]:
-# for i in range(2):
-# for row in range(metadata.shape[0]):
-# for row in range(10, metadata.shape[0]):
-
-
-
 for row in range(metadata.shape[0]):
-# for row in range(1):
+
     print('+ row: ', row)
     print('+ ct_file_name: ', metadata['ct_file_name'][row])
-    # ct_slice_input_path = imagesTr_path_glob[i]
-    # lesion_slice_input_path = labelsTr_path_glob[i]
 
     ## locating the CT and Seg
     ct_scan_input_path = os.path.join(nifti_folder, metadata['ct_file_name'][row])
