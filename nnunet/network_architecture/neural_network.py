@@ -13,7 +13,7 @@
 #    limitations under the License.
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='3'
+os.environ['CUDA_VISIBLE_DEVICES']='0'
 
 import numpy as np
 from batchgenerators.augmentations.utils import pad_nd_image
@@ -823,6 +823,3 @@ if __name__ == '__main__':
 
 
     print(SegmentationNetwork._compute_steps_for_sliding_window((123, 54, 123), (246, 162, 369), 0.25))
-
-
-

@@ -13,7 +13,7 @@
 #    limitations under the License.
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='3'
+os.environ['CUDA_VISIBLE_DEVICES']='0'
 
 from _warnings import warn
 from typing import Tuple
