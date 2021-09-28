@@ -13,9 +13,9 @@ from nnunet.dataset_conversion import utils
 
 
 # ## Desktop folder
-# dataset_folder = '/data/01_UB/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_COVIDSegChallenge'
+dataset_folder = '/data/01_UB/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_COVIDSegChallenge'
 ## Server folder
-dataset_folder = '/home/jgarcia/datasets/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_FullCOVIDSegChallenge'
+# dataset_folder = '/home/jgarcia/datasets/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_FullCOVIDSegChallenge'
 
 ## Folder directories for Json conversion
 imagesTr_path = os.path.join(dataset_folder, "imagesTr")
