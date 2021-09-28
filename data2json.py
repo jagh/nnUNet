@@ -7,7 +7,6 @@ from nnunet.dataset_conversion import utils
 
 
 #dataset_folder = '/data/01_UB/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_COVIDSegChallenge'
-
 dataset_folder = '/home/jgarcia/datasets/nnUNet_Sandbox/nnUNet_raw_data_base/nnUNet_raw_data/Task115_FullCOVIDSegChallenge'
 
 
